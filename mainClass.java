@@ -13,8 +13,9 @@ public class mainClass {
      */
    public static void main(String[] args) throws SQLException{
         boolean control = true;
+        double media; 
         String errorMessage = null;
-        String controlString = "";
+        String controlString;
         Scanner leitor = new Scanner(System.in);
         System.out.println("Deseja inserir algum valor na base de dados?(S/n)");
         controlString = leitor.next();
@@ -67,8 +68,12 @@ public class mainClass {
                 break;
             }
         }
-        double media = CustomerAccount.getCustomerAccount();
-        System.out.println("Média dos valores:" + media);
+        media = CustomerAccount.getCustomerAccountValue();
+        System.out.println("Média dos valores: " + media);
+        
+        System.out.println("Clientes usados no calculo de média: \n"
+                + "ID | CPF/CNPJ | NOME | ATIVO? | VALOR ");
+        CustomerAccount.getCustomerAccount();
     } 
     
 }
